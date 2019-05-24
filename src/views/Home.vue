@@ -32,8 +32,8 @@
     <p class="headline">This is a headline.</p>
     <p class="display-4 font-weight-light font-italic green--text">a thing!</p>
     <p class="caption pink--text">I'm a caption.</p>
-    <v-btn class="green white--text">click me</v-btn>
-    <v-btn depressed color="pink">click me!</v-btn>
+    <v-btn class="green white--text">Click me</v-btn>
+    <v-btn depressed color="pink">No, click me!</v-btn>
     <v-btn flat color="pink">click me!</v-btn>
 
     <v-btn depressed class="pink white--text">
@@ -53,6 +53,9 @@
         <v-icon color="red darken-3" large right>email</v-icon>
       </v-btn>
       <v-btn color="purple" dark fab small><v-icon>favorite</v-icon></v-btn>
+      <v-btn depressed color="red lighten-4 blue--text text--darken-4 " fab>
+        <v-icon>favorite</v-icon>
+      </v-btn>
     </div>
   </div>
 </template>
