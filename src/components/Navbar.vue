@@ -1,9 +1,7 @@
 <template>
-  <div class="home">
-    <h1>Homepage</h1>
-  </div>
+  <div><h1 class="blue lighten-5">NAVBAR</h1></div>
 </template>
-
 <script>
 export default {};
 </script>
+
