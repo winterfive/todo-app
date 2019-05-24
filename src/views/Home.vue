@@ -53,9 +53,15 @@
         <v-icon color="red darken-3" large right>email</v-icon>
       </v-btn>
       <v-btn color="purple" dark fab small><v-icon>favorite</v-icon></v-btn>
-      <v-btn depressed color="red lighten-4 blue--text text--darken-4 " fab>
+      <v-btn depressed color="red lighten-4 blue--text text--darken-4" fab>
         <v-icon>favorite</v-icon>
       </v-btn>
+      <v-btn class="hidden-md-and-up" color="orange"
+        >I hide on bigger screens</v-btn
+      >
+      <v-btn class="hidden-md-and-down" color="green"
+        >I hide on smaller screens</v-btn
+      >
     </div>
   </div>
 </template>
