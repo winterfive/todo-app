@@ -25,6 +25,13 @@
       quas suscipit veritatis, velit, esse aliquid iste quo voluptates numquam
       fugit non!
     </p>
+    <h1 class="display-4">Massive</h1>
+    <h1>h1 size</h1>
+    <h4 class="diaply-1">Small</h4>
+    <h4>h4 size</h4>
+    <p class="headline">This is a headline.</p>
+    <p class="display-4 font-weight-light font-italic">a thing!</p>
+    <p class="caption">I'm a caption.</p>
   </div>
 </template>
 
