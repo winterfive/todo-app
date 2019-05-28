@@ -1,7 +1,7 @@
 <template>
   <nav>
     <v-toolbar flat app color="blue lighten-2">
-      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="text-uppercase white--text">
         <span class="font-weight-light">TODO</span>
         <span>Stuff</span>
