@@ -13,7 +13,7 @@
     </v-toolbar>
     <v-navigation-drawer v-model="drawer" app class="indigo">
       <v-list>
-        <v-list-tile v-for="link in links">
+        <v-list-tile v-for="link in links" :key="link.text">
           <v-list-tile-action>
             <v-icon dark>{{ link.icon }}</v-icon>
           </v-list-tile-action>
