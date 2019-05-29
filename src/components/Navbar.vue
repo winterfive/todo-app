@@ -11,8 +11,19 @@
         <span>Sign out</span><v-icon right>exit_to_app</v-icon>
       </v-btn>
     </v-toolbar>
-    <v-navigation-drawer v-model="drawer" app class="info">
-      <p class="warning">test</p>
+    <v-navigation-drawer v-model="drawer" app class="indigo">
+      <v-list>
+        <v-list-tile v-for="link in links">
+          <v-list-tile-action>
+            <v-icon dark>{{ link.icon }}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title class="white--text">
+              {{ link.text }}
+            </v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
     </v-navigation-drawer>
   </nav>
 </template>
@@ -20,8 +31,25 @@
 export default {
   data() {
     return {
-      drawer: false
-    }
+      drawer: false,
+      links: [
+        {
+          icon: "dashboard",
+          text: "Dashboard",
+          route: "/"
+        },
+        {
+          icon: "folder",
+          text: "My Projects",
+          route: "/projects"
+        },
+        {
+          icon: "person",
+          text: "Team",
+          route: "/team"
+        }
+      ]
+    };
   }
 };
 </script>
