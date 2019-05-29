@@ -2,7 +2,7 @@
   <div class="projects">
     <h1 class="subheading grey--text">Projects</h1>
     <v-container my-5>
-      <v-card flat class="pa-3" v-for="project in projects" :key="project.title"
+      <v-card flat v-for="project in projects" :key="project.title"
         ><v-layout row wrap class="pa-3" :class="project.status">
           <v-flex xs12 md6>
             <div class="caption darkgrey--text">Project Title</div>
