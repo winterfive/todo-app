@@ -47,6 +47,11 @@ export default {
           icon: "person",
           text: "Team",
           route: "/team"
+        },
+        {
+          icon: "extension",
+          text: "Stuff",
+          route: "/stuff"
         }
       ]
     };
