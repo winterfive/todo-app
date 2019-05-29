@@ -20,8 +20,9 @@
             <div class="caption darkgrey--text">status</div>
             <div>{{ project.status }}</div>
           </v-flex>
-        </v-layout></v-card
-      >
+        </v-layout>
+        <v-divider></v-divider>
+      </v-card>
     </v-container>
   </div>
 </template>
@@ -70,19 +71,19 @@ export default {
 </script>
 
 <style lang="scss">
-$status-border-width: 10px;
+$status-border-width: 5px;
 $status-border-style: solid;
 
 .complete {
-  border-left: $status-border-width $status-border-style blue;
+  border-left: $status-border-width $status-border-style green;
 }
 
 .ongoing {
-  border-left: $status-border-width $status-border-style purple;
+  border-left: $status-border-width $status-border-style lightblue;
 }
 
 .overdue {
-  border-left: $status-border-width $status-border-style red;
+  border-left: $status-border-width $status-border-style tomato;
 }
 </style>
 
