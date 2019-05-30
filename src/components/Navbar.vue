@@ -15,7 +15,11 @@
       <v-layout column align-center>
         <v-flex class="mt-5">
           <v-avatar size="100">
-            <img src="/avatar.jpg" class="hero-img" alt="" />
+            <img
+              src="/avatar.jpg"
+              class="hero-img"
+              alt="A capital L on a black background"
+            />
           </v-avatar>
         </v-flex>
       </v-layout>
