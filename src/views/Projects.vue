@@ -2,6 +2,17 @@
   <div class="projects">
     <h1 class="subheading grey--text">Projects</h1>
     <v-container my-5>
+      <v-layout my-4 align-center justify-start row fill-height>
+        <v-btn small depressed ma-2 color="white">
+          <v-icon left>folder</v-icon>
+          <span class="caption text-lowercase">by project title</span>
+        </v-btn>
+        <v-btn small depressed ma-2 color="white">
+          <v-icon left>person</v-icon>
+          <span class="caption text-lowercase">by person</span>
+        </v-btn>
+      </v-layout>
+
       <v-card flat v-for="project in projects" :key="project.title"
         ><v-layout row wrap class="pa-3 border-left" :class="project.status">
           <v-flex xs12 md6>
