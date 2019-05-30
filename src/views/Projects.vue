@@ -3,11 +3,11 @@
     <h1 class="subheading grey--text">Projects</h1>
     <v-container my-5>
       <v-layout my-4 align-center justify-start row fill-height>
-        <v-btn small depressed ma-2 color="white">
+        <v-btn small depressed ma-2 color="white" @click="sortBy(title)">
           <v-icon left>folder</v-icon>
           <span class="caption text-lowercase">by project title</span>
         </v-btn>
-        <v-btn small depressed ma-2 color="white">
+        <v-btn small depressed ma-2 color="white" @click="sortBy(person)">
           <v-icon left>person</v-icon>
           <span class="caption text-lowercase">by person</span>
         </v-btn>
@@ -50,7 +50,7 @@ export default {
       projects: [
         {
           title: "title01",
-          person: "person01",
+          person: "Darwin T. Kitty",
           due: "5th May 2019",
           status: "overdue",
           content:
@@ -58,7 +58,7 @@ export default {
         },
         {
           title: "title02",
-          person: "person02",
+          person: "Lee Gainer",
           due: "24th Jan 2019",
           status: "complete",
           content:
@@ -66,7 +66,7 @@ export default {
         },
         {
           title: "title03",
-          person: "person03",
+          person: "Lisa Chang",
           due: "10th Jan 2021",
           status: "ongoing",
           content:
@@ -74,7 +74,7 @@ export default {
         },
         {
           title: "title04",
-          person: "person04",
+          person: "Sean McBeth",
           due: "30th June 2020",
           status: "new",
           content:
@@ -82,6 +82,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    sortBy(prop) {
+      this.projects.sort((a, b) => (a[prop] < b[prop] ? -1 : 1));
+    }
   }
 };
 </script>
