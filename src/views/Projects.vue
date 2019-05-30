@@ -3,7 +3,7 @@
     <h1 class="subheading grey--text">Projects</h1>
     <v-container my-5>
       <v-card flat v-for="project in projects" :key="project.title"
-        ><v-layout row wrap class="pa-3" :class="project.status">
+        ><v-layout row wrap class="pa-3 border-left" :class="project.status">
           <v-flex xs12 md6>
             <div class="caption darkgrey--text">Project Title</div>
             <div>{{ project.title }}</div>
@@ -17,8 +17,13 @@
             <div>{{ project.due }}</div>
           </v-flex>
           <v-flex xs2 sm4 md2>
-            <div class="caption darkgrey--text">status</div>
-            <div>{{ project.status }}</div>
+            <v-chip
+              small
+              class="white--text caption my-2 right"
+              :class="project.status"
+            >
+              {{ project.status }}
+            </v-chip>
           </v-flex>
         </v-layout>
         <v-divider></v-divider>
@@ -35,8 +40,8 @@ export default {
         {
           title: "title01",
           person: "person01",
-          due: "5th June 2020",
-          status: "ongoing",
+          due: "5th May 2019",
+          status: "overdue",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         },
@@ -60,7 +65,7 @@ export default {
           title: "title04",
           person: "person04",
           due: "30th June 2020",
-          status: "overdue",
+          status: "new",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         }
@@ -73,17 +78,41 @@ export default {
 <style lang="scss">
 $status-border-width: 5px;
 $status-border-style: solid;
+$status-color-complete: blue;
+$status-color-ongoing: #7fd8da;
+$status-color-overdue: tomato;
+$status-color-new: yellowgreen;
 
-.complete {
-  border-left: $status-border-width $status-border-style green;
+.border-left.complete {
+  border-left: $status-border-width $status-border-style$status-color-complete;
 }
 
-.ongoing {
-  border-left: $status-border-width $status-border-style lightblue;
+.border-left.new {
+  border-left: $status-border-width $status-border-style $status-color-new;
 }
 
-.overdue {
-  border-left: $status-border-width $status-border-style tomato;
+.border-left.ongoing {
+  border-left: $status-border-width $status-border-style $status-color-ongoing;
+}
+
+.border-left.overdue {
+  border-left: $status-border-width $status-border-style$status-color-overdue;
+}
+
+.v-chip.complete {
+  background: $status-color-complete;
+}
+
+.v-chip.new {
+  background: $status-color-new;
+}
+
+.v-chip.ongoing {
+  background: $status-color-ongoing;
+}
+
+.v-chip.overdue {
+  background: $status-color-overdue;
 }
 </style>
 
