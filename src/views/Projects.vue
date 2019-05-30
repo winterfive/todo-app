@@ -86,7 +86,7 @@ export default {
         },
         {
           title: "Being awesome everyday",
-          person: "Lisa Chang",
+          person: "Lisa Chung",
           due: "10th Jan 2021",
           status: "ongoing",
           content:
