@@ -12,8 +12,20 @@
       </v-btn>
     </v-toolbar>
     <v-navigation-drawer v-model="drawer" app class="indigo">
+      <v-layout column align-center>
+        <v-flex class="mt-5">
+          <v-avatar size="100">
+            <img src="/avatar.jpg" class="hero-img" alt="" />
+          </v-avatar>
+        </v-flex>
+      </v-layout>
       <v-list>
-        <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">
+        <v-list-tile
+          v-for="link in links"
+          :key="link.text"
+          router
+          :to="link.route"
+        >
           <v-list-tile-action>
             <v-icon dark>{{ link.icon }}</v-icon>
           </v-list-tile-action>
@@ -58,4 +70,11 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.hero-img {
+  height: 80px;
+  width: 80px;
+}
+</style>
 
