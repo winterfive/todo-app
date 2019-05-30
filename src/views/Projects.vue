@@ -3,11 +3,11 @@
     <h1 class="subheading grey--text">Projects</h1>
     <v-container my-5>
       <v-layout my-4 align-center justify-start row fill-height>
-        <v-btn small depressed ma-2 color="white" @click="sortBy(title)">
+        <v-btn small depressed ma-2 color="white" @click="sortBy('title')">
           <v-icon left>folder</v-icon>
           <span class="caption text-lowercase">by project title</span>
         </v-btn>
-        <v-btn small depressed ma-2 color="white" @click="sortBy(person)">
+        <v-btn small depressed ma-2 color="white" @click="sortBy('person')">
           <v-icon left>person</v-icon>
           <span class="caption text-lowercase">by person</span>
         </v-btn>
@@ -49,7 +49,7 @@ export default {
     return {
       projects: [
         {
-          title: "title01",
+          title: "Kibble and Us",
           person: "Darwin T. Kitty",
           due: "5th May 2019",
           status: "overdue",
@@ -57,7 +57,7 @@ export default {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         },
         {
-          title: "title02",
+          title: "Dropdowns everywhere",
           person: "Lee Gainer",
           due: "24th Jan 2019",
           status: "complete",
@@ -65,7 +65,7 @@ export default {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         },
         {
-          title: "title03",
+          title: "Being awesome everyday",
           person: "Lisa Chang",
           due: "10th Jan 2021",
           status: "ongoing",
@@ -73,7 +73,7 @@ export default {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         },
         {
-          title: "title04",
+          title: "VR: To the future!",
           person: "Sean McBeth",
           due: "30th June 2020",
           status: "new",
