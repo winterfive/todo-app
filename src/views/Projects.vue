@@ -36,15 +36,15 @@
       <v-card flat v-for="project in projects" :key="project.title"
         ><v-layout row wrap class="pa-3 border-left" :class="project.status">
           <v-flex xs12 md6>
-            <div class="caption darkgrey--text">Project Title</div>
+            <div class="caption grey--text lighten-1">Project Title</div>
             <div>{{ project.title }}</div>
           </v-flex>
           <v-flex xs6 sm4 md2>
-            <div class="caption darkgrey--text">Person</div>
+            <div class="caption grey--text">Person</div>
             <div>{{ project.person }}</div>
           </v-flex>
           <v-flex xs6 sm4 md2>
-            <div class="caption darkgrey--text">Due by</div>
+            <div class="caption grey--text">Due by</div>
             <div>{{ project.due }}</div>
           </v-flex>
           <v-flex xs2 sm4 md2>
