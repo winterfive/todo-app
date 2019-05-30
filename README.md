@@ -33,3 +33,5 @@ npm run lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+Kitty images provided by https://loremflickr.com/
