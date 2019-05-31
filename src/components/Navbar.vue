@@ -7,6 +7,25 @@
         <span>Stuff</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
+
+      <!-- Dropdown menu -->
+      <v-menu offset-y>
+        <v-btn flat slot="activator" dark>
+          <v-icon left>expand_more</v-icon>
+          <span>Menu</span>
+        </v-btn>
+        <v-list class="indigo" dark>
+          <v-list-tile
+            v-for="link in links"
+            :key="link.index"
+            router
+            :to="link.route"
+          >
+            <v-list-tile-title>{{ link.text }}</v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
+
       <v-btn flat dark>
         <span>Sign out</span><v-icon right>exit_to_app</v-icon>
       </v-btn>
