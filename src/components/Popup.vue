@@ -47,6 +47,7 @@
 
 <script>
 import format from "date-fns/format";
+import db from "@/fb";
 
 export default {
   data() {
@@ -54,7 +55,6 @@ export default {
       dialog: false,
       title: "",
       content: "",
-      // Will become props and passed to other views
       newProjectTitle: "",
       newProjectContent: "",
       due: null,
@@ -73,6 +73,21 @@ export default {
       this.title = "";
       this.newProjectContent = this.content;
       this.content = "";
+
+      const project = {
+        title: this.newProjectTitle,
+        content: this.newProjectContent,
+        due: format(this.due, "Do MMM YYYY"),
+        person: "LG",
+        status: "ongoing"
+      };
+
+      db.collection("projects")
+        .add(project)
+        .then(() => {
+          // eslint-disable-next-line no-console
+          console.log("Added to db");
+        });
     },
     closePopup() {
       this.dialog = false;
