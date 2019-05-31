@@ -41,7 +41,7 @@
             />
           </v-avatar>
         </v-flex>
-        <v-flex>
+        <v-flex class="my-3">
           <popup />
         </v-flex>
       </v-layout>
