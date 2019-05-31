@@ -86,6 +86,7 @@ export default {
           this.dialog = false;
           this.title = "";
           this.content = "";
+          this.$emit("projectAdded");
         });
     }
   },

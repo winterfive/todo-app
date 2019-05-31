@@ -1,5 +1,11 @@
 <template>
   <nav>
+    <v-snackbar v-model="snackbar" :timeout="4000" top color="indigo">
+      <span>
+        You made a new project!
+      </span>
+      <v-btn flat dark @click="snackbar = false">Close</v-btn>
+    </v-snackbar>
     <v-toolbar flat app color="primary">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="text-uppercase white--text">
@@ -42,7 +48,7 @@
           </v-avatar>
         </v-flex>
         <v-flex class="my-3">
-          <popup />
+          <popup @projectAdded="snackbar = true" />
         </v-flex>
       </v-layout>
       <v-list>
@@ -102,7 +108,8 @@ export default {
           text: "Stuff",
           route: "/stuff"
         }
-      ]
+      ],
+      snackbar: false
     };
   }
 };
