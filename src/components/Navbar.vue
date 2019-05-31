@@ -56,8 +56,13 @@ export default {
         },
         {
           icon: "folder",
-          text: "My Projects",
+          text: "Projects",
           route: "/projects"
+        },
+        {
+          icon: "folder",
+          text: "My Projects",
+          route: "/myprojects"
         },
         {
           icon: "person",

@@ -1,6 +1,6 @@
 <template>
   <div class="stuff">
-    <h1 class="subheading grey--text">Stuff</h1>
+    <h1 class="subheading grey--text mb-3">Stuff</h1>
     <p class="red white--text">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem,
       veniam molestias numquam aliquam porro aut fugit nobis sit veritatis

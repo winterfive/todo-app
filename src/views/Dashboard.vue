@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-    <h1>Dashboard</h1>
+    <h1 class="subheading grey--text">Dashboard</h1>
     <v-container my-5>
       <v-layout row wrap>
         <v-flex xs12 md6>

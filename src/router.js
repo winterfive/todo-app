@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Dashboard from "./views/Dashboard.vue";
 import Projects from "./views/Projects.vue";
+import MyProjects from "./views/MyProjects.vue";
 import Team from "./views/Team.vue";
 import Stuff from "./views/Stuff.vue";
 
@@ -31,6 +32,11 @@ export default new Router({
       path: "/team",
       name: "Team",
       component: Team
+    },
+    {
+      path: "/myprojects",
+      name: "My Projects",
+      component: MyProjects
     }
   ]
 });
