@@ -27,6 +27,7 @@
             ></v-text-field>
             <v-date-picker v-model="due"></v-date-picker>
           </v-menu>
+          <v-spacer></v-spacer>
 
           <v-btn flat class="primary mx-0" @click="handler">Add Project </v-btn>
         </v-form>
@@ -72,7 +73,7 @@ export default {
   },
   computed: {
     formatDate() {
-      return this.due ? format(this.due, "Do MMM YYY") : "";
+      return this.due ? format(this.due, "Do MMM YYYY") : "";
     }
   }
 };
