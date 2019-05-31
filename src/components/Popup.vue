@@ -17,6 +17,17 @@
             v-model="content"
             prepend-icon="edit"
           ></v-textarea>
+
+          <v-menu>
+            <v-text-field
+              slot="activator"
+              label="Due date"
+              prepend-icon="date_range"
+              :value="formatDate"
+            ></v-text-field>
+            <v-date-picker v-model="due"></v-date-picker>
+          </v-menu>
+
           <v-btn flat class="primary mx-0" @click="handler">Add Project </v-btn>
         </v-form>
       </v-card-text>
@@ -25,6 +36,8 @@
 </template>
 
 <script>
+import format from "date-fns/format";
+
 export default {
   data() {
     return {
@@ -33,7 +46,8 @@ export default {
       content: "",
       // Will become props and passed to other views
       newProjectTitle: "",
-      newProjectContent: ""
+      newProjectContent: "",
+      due: null
     };
   },
   methods: {
@@ -54,6 +68,11 @@ export default {
   watch: {
     dialog(value) {
       !value;
+    }
+  },
+  computed: {
+    formatDate() {
+      return this.due ? format(this.due, "Do MMM YYY") : "";
     }
   }
 };
