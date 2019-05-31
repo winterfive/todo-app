@@ -41,6 +41,9 @@
             />
           </v-avatar>
         </v-flex>
+        <v-flex>
+          <popup />
+        </v-flex>
       </v-layout>
       <v-list>
         <v-list-tile
@@ -62,8 +65,14 @@
     </v-navigation-drawer>
   </nav>
 </template>
+
 <script>
+import Popup from "./Popup.vue";
+
 export default {
+  components: {
+    Popup
+  },
   data() {
     return {
       drawer: false,
