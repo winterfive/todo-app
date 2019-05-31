@@ -1,6 +1,4 @@
 <template>
-  <!-- form needs submit on return keypress -->
-
   <v-dialog v-model="dialog" max-width="600px">
     <v-btn flat slot="activator" class="indigo lighten-1" dark
       >Add new project</v-btn
@@ -42,8 +40,6 @@ export default {
     handler() {
       this.submitInfo();
       this.closePopup();
-      // eslint-disable-next-line no-console
-      console.log("got to here");
     },
     submitInfo() {
       this.newProjectTitle = this.title;
