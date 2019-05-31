@@ -1,5 +1,7 @@
 <template>
-  <v-dialog max-width="600px">
+  <!-- form needs submit on return keypress -->
+
+  <v-dialog v-model="dialog" max-width="600px">
     <v-btn flat slot="activator" class="indigo lighten-1" dark
       >Add new project</v-btn
     >
@@ -17,7 +19,7 @@
             v-model="content"
             prepend-icon="edit"
           ></v-textarea>
-          <v-btn flat class="primary mx-0" @click="submit">Add Project </v-btn>
+          <v-btn flat class="primary mx-0" @click="handler">Add Project </v-btn>
         </v-form>
       </v-card-text>
     </v-card>
@@ -28,6 +30,7 @@
 export default {
   data() {
     return {
+      dialog: false,
       title: "",
       content: "",
       // Will become props and passed to other views
@@ -36,13 +39,25 @@ export default {
     };
   },
   methods: {
-    submit() {
+    handler() {
+      this.submitInfo();
+      this.closePopup();
       // eslint-disable-next-line no-console
-      console.log(this.title, this.content);
+      console.log("got to here");
+    },
+    submitInfo() {
       this.newProjectTitle = this.title;
       this.title = "";
       this.newProjectContent = this.content;
       this.content = "";
+    },
+    closePopup() {
+      this.dialog = false;
+    }
+  },
+  watch: {
+    dialog(value) {
+      !value;
     }
   }
 };
