@@ -37,6 +37,7 @@
             class="primary mx-0"
             @click="handler"
             @keydown.enter="handler"
+            :loading="loading"
             >Add Project
           </v-btn>
         </v-form>
@@ -52,31 +53,27 @@ import db from "@/fb";
 export default {
   data() {
     return {
-      dialog: false,
-      title: "",
       content: "",
+      dialog: false,
+      due: null,
+      inputRules: [v => v.length >= 3 || "Minimal length required is 3."],
+      loading: false,
       newProjectTitle: "",
       newProjectContent: "",
-      due: null,
-      inputRules: [v => v.length >= 3 || "Minimal length required is 3."]
+      title: ""
     };
   },
   methods: {
     handler() {
       if (this.$refs.form.validate()) {
+        this.loading = true;
         this.submitInfo();
-        this.closePopup();
       }
     },
     submitInfo() {
-      this.newProjectTitle = this.title;
-      this.title = "";
-      this.newProjectContent = this.content;
-      this.content = "";
-
       const project = {
-        title: this.newProjectTitle,
-        content: this.newProjectContent,
+        title: this.title,
+        content: this.content,
         due: format(this.due, "Do MMM YYYY"),
         person: "LG",
         status: "ongoing"
@@ -85,17 +82,11 @@ export default {
       db.collection("projects")
         .add(project)
         .then(() => {
-          // eslint-disable-next-line no-console
-          console.log("Added to db");
+          this.loading = false;
+          this.dialog = false;
+          this.title = "";
+          this.content = "";
         });
-    },
-    closePopup() {
-      this.dialog = false;
-    }
-  },
-  watch: {
-    dialog(value) {
-      !value;
     }
   },
   computed: {
