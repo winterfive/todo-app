@@ -6,16 +6,18 @@
     <v-card>
       <v-card-title><h2>Add a New Project</h2></v-card-title>
       <v-card-text>
-        <v-form class="px-3">
+        <v-form class="px-3" ref="form">
           <v-text-field
             label="title"
             v-model="title"
             prepend-icon="folder"
+            :rules="inputRules"
           ></v-text-field>
           <v-textarea
             label="Information"
             v-model="content"
             prepend-icon="edit"
+            :rules="inputRules"
           ></v-textarea>
 
           <v-menu>
@@ -24,12 +26,19 @@
               label="Due date"
               prepend-icon="date_range"
               :value="formatDate"
+              :rules="inputRules"
             ></v-text-field>
             <v-date-picker v-model="due"></v-date-picker>
           </v-menu>
           <v-spacer></v-spacer>
 
-          <v-btn flat class="primary mx-0" @click="handler">Add Project </v-btn>
+          <v-btn
+            flat
+            class="primary mx-0"
+            @click="handler"
+            @keydown.enter="handler"
+            >Add Project
+          </v-btn>
         </v-form>
       </v-card-text>
     </v-card>
@@ -48,13 +57,16 @@ export default {
       // Will become props and passed to other views
       newProjectTitle: "",
       newProjectContent: "",
-      due: null
+      due: null,
+      inputRules: [v => v.length >= 3 || "Minimal length required is 3."]
     };
   },
   methods: {
     handler() {
-      this.submitInfo();
-      this.closePopup();
+      if (this.$refs.form.validate()) {
+        this.submitInfo();
+        this.closePopup();
+      }
     },
     submitInfo() {
       this.newProjectTitle = this.title;
